@@ -83,6 +83,7 @@ BOARD_VOLD_MAX_PARTITIONS := 40
 #BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 
 # Recovery
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 TARGET_RECOVERY_FSTAB := device/htc/jewel/rootdir/etc/fstab.qcom
 
 # TWRP
