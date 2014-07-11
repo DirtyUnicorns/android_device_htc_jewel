@@ -21,6 +21,9 @@ $(call inherit-product, device/htc/s4-common/s4.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/jewel/overlay
 
+PRODUCT_COPY_FILES += \
+    vendor/du/bootanimations/bootanimation_1280_800.zip:system/media/bootanimation.zip
+
 # Boot ramdisk setup
 TARGET_SETS_FSTAB := true
 
