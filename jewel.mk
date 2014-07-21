@@ -86,12 +86,11 @@ PRODUCT_PACKAGES += \
 
 # Torch
 PRODUCT_PACKAGES += \
-    OmniTorch \
-    com.android.future.usb.accessory
+    OmniTorch
 
-#Default USB Mount
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    e2fsck
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -121,5 +120,5 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 PRODUCT_DEVICE := jewel
 PRODUCT_NAME := jewel
 PRODUCT_BRAND := htc
-PRODUCT_MODEL := EVO
+PRODUCT_MODEL := EVO 4G LTE
 PRODUCT_MANUFACTURER := HTC

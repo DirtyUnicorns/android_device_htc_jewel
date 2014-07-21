@@ -1,4 +1,3 @@
-
 on init
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
@@ -22,11 +21,6 @@ on init
     export EXTERNAL_STORAGE3 /storage/sdcard1
     export EXTERNAL_STORAGE4 /storage/usbdisk
     export EXTERNAL_STORAGE5 /storage/usbdisk
-
-    setprop ro.usb.idproduct.ums 0ce9
-    setprop ro.usb.idproduct.mtp 0f91
-    setprop ro.usb.idproduct.mtp_adb 0df5
-    setprop ro.usb.idproduct.rndis 0ce9
 
 on early-fs
     # System must be mounted in order to use mksh and setup the fstabs
@@ -70,11 +64,6 @@ on fs
 on early-boot
     # Set the storage properties now that the property service is available
     start set_props
-
-on boot
-    # jewel radio
-    mkdir /dev/socket/qmux_radio 0770 radio radio
-    chmod 2770 /dev/socket/qmux_radio
 
 # Services start here
 
@@ -124,7 +113,7 @@ on property:sys.storage_legacy=0
     symlink /mnt/shell/emulated/0 /mnt/sdcard
     symlink /mnt/shell/emulated/0 /sdcard
     exec /system/bin/mount -o ro,remount /
-    setprop persist.sys.usb.config mtp,adb
+    setprop persist.sys.usb.config mtp
     start sdcard
 
 on property:sys.storage_legacy=1
@@ -133,5 +122,5 @@ on property:sys.storage_legacy=1
     symlink /storage/sdcard0 /mnt/sdcard
     symlink /storage/sdcard0 /sdcard
     exec /system/bin/mount -o ro,remount /
-    setprop persist.sys.usb.config mass_storage,adb
+    setprop persist.sys.usb.config mtp
 
