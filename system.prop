@@ -40,3 +40,6 @@ persist.timed.enable=true
 
 # UMS
 persist.sys.usb.config=mtp
+
+#DU Updater
+ro.du.updater=jewel
