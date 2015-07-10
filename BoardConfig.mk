@@ -31,6 +31,9 @@
 TARGET_BOOTLOADER_BOARD_NAME := jewel
 TARGET_BOARD_INFO_FILE ?= device/htc/jewel/board-info.txt
 
+# Prebuilt Chromium Flag
+USE_PREBUILT_CHROMIUM := true
+
 # Kernel
 TARGET_KERNEL_CONFIG := jet_defconfig
 
